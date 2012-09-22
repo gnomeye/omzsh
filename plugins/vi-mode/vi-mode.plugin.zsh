@@ -1,5 +1,5 @@
 function zle-line-init zle-keymap-select {
-  zle reset-prompt
+   zle reset-prompt
 }
 
 zle -N zle-line-init
