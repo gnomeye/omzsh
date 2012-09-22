@@ -84,3 +84,5 @@ This project wouldn't exist without all of our awesome users and contributors.
 * "View our growing list of contributors":https://github.com/robbyrussell/oh-my-zsh/contributors
 
 Thank you so much!
+
+-- forked by gnomeye
