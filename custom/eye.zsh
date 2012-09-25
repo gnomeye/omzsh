@@ -32,6 +32,6 @@ source ~/.aliases
 source ~/.functs
 source ~/.mailfuncts
 #fasd
-eval "$(eval fasd --init auto)"
+#eval "$(eval fasd --init auto)"
 #grep color
 export GREP_COLOR='1;31'
