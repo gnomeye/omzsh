@@ -9,8 +9,8 @@ zle -N zle-keymap-select
 #them after
 binds=`bindkey -L`
 bindkey -v
-for bind in ${(@f)binds}; do eval $bind; done
-unset binds
+#for bind in ${(@f)binds}; do eval $bind; done
+#unset binds
 
 # if mode indicator wasn't setup by theme, define default
 if [[ "$MODE_INDICATOR" == "" ]]; then
