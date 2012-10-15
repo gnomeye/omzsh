@@ -1,4 +1,8 @@
-PROMPT=$'%{$reset_color%}┌─┤%B%{$fg[blue]%}%n%b%{$fg[blue]%}_%M%{$reset_color%}│ %~\n└─╼ '
+eval mybl='$FG[004]'
+eval mybl2='$FG[012]'
+mybl3="%{[1;35m%}"
+#PROMPT=$'%{$reset_color%}┌─┤%B%{$fg[blue]%}%n%b%{$fg[blue]%}_%M%{$reset_color%}│ %~\n└─╼ '
+PROMPT=$'%{$reset_color%}┌─┤%{$mybl%}%n%{$mybl2%}_%M%{$reset_color%}│ %~\n└─╼ '
 RPROMPT='$(vi_mode_prompt_info)$(git_prompt_info)$(qload)'
 # │ %{$fg[blue]%}%T%{$reset_color%}'
 
