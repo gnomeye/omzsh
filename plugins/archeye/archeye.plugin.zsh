@@ -1,6 +1,8 @@
 # Archlinux zsh aliases and functions
 # for gnomeye
 # Usage is also described at https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins
+alias lpac='pacman-color'
+alias spac='sudo pacman-color'
 alias pacupg='sudo pacman-color -Syu'        # Synchronize with repositories before upgrading packages that are out of date on the local system.
 alias pacin='sudo pacman-color -S'           # Install specific package(s) from the repositories
 alias pacins='sudo pacman-color -U'          # Install specific package not from the repositories but from a file 
