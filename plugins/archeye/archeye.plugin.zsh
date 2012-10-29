@@ -16,6 +16,7 @@ alias pacups='pacman-color -Qu'		     # show updates
 alias paclocl='pacman-color -Qm'	     # show locally installed packages
 alias pacremtod='echo -e "Packages removed today:\n" && grep $(date +%F) /var/log/pacman.log | grep removed | cl 4-'
 alias pacinsttod='echo -e "Packages installed today:\n" && grep $(date +%F) /var/log/pacman.log | grep installed | cl 4-'
+alias pacupdtod='echo -e "Packages updated today:\n" && grep $(date +%F) /var/log/pacman.log | grep upgraded | cl 4-'
 #if packer then update with packer
 if [[ -x `which packer` ]]; then
   alias pacupd='sudo packer -Su'
