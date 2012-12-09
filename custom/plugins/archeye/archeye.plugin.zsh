@@ -10,6 +10,7 @@ alias pacre='sudo pacman-color -R'           # Remove the specified package(s), 
 alias pacrem='sudo pacman-color -Rns'        # Remove the specified package(s), its configuration(s) and unneeded dependencies
 alias pacrep='pacman-color -Si'              # Display information about a given package in the repositories
 alias pacreps='pacman-color -Ss'             # Search for package(s) in the repositories
+alias pacse='pacreps'
 alias pacloc='pacman-color -Qi'              # Display information about a given package in the local database
 alias paclocs='pacman-color -Qs'             # Search for package(s) in the local database
 alias pacups='pacman-color -Qu'		     # show updates
