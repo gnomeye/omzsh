@@ -4,8 +4,6 @@ FG_LBLUE=%F{008}
 BG_LBLUE=%K{008}
 FG_DBLUE=%F{004}
 BG_DBLUE=%K{004}
-FG_ORA=%F{011}
-BG_ORA=%K{011}
 FG_GREY=%F{007}
 BG_GREY=%K{007}
 BG_DARK=%K{000}
@@ -16,8 +14,7 @@ BG_DGREY=%K{244}
 FG_DGREY=%F{244}
 #VARS
 CP="%~"
-LRIGHT="$(qload)"
-RRIGHT="%D{%H:%M}"
+RIGHT="$(qload)"
 #GIT
 GIT_INFO=$'$(git_prompt_info)'
 GIT_DIRTY=%F{160}
@@ -34,9 +31,9 @@ ZSH_THEME_GIT_PROMPT_RENAMED="%F{220]➜%f"
 ZSH_THEME_GIT_PROMPT_UNMERGED="%F{082]═%f"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%F{190]✭%f"
 ## PROMPT
-PROMPT="${FG_DARK}${BG_DGREY}"$'\u2b80'"${BG_DGREY} %n ${FG_DGREY}${BG_LDARK}"$'\u2b80'"${FG_DARK} %m ${FG_LDARK}${BG_ORA}"$'\u2b80'"%F{015} $CP ${FG_ORA}%k"$'\u2b80'" 
+PROMPT="${FG_DARK}${BG_DGREY}"$'\u2b80'"${BG_DGREY} %n ${FG_DGREY}${BG_LDARK}"$'\u2b80'"${FG_DARK} %m ${FG_LDARK}${BG_DBLUE}"$'\u2b80'"%F{015} $CP ${FG_DBLUE}%k"$'\u2b80'" 
 $FG_DGREY$VI_MODE"$'\u2b81'"%f%k "
-RPROMPT="${FG_LDARK}"$'\u2b82'"$GIT_INFO${FG_GREY}${BG_LDARK} $LRIGHT "$'\u2b83'" $RRIGHT ${FG_DARK}${BG_LDARK}"$'\u2b82'"%f%k" 
+RPROMPT="${FG_LDARK}"$'\u2b82'"$GIT_INFO${FG_GREY}${BG_LDARK} $RIGHT ${FG_DARK}${BG_LDARK}"$'\u2b82'"%f%k" 
 ### VI
 # MODE_INDICATOR="%F{009}"$'\u2b83'"vi"$'\u2b81'"%f"
 VI_MODE=$'$(vi_mode_prompt_info)'
