@@ -2,10 +2,10 @@ current_path=`pwd`
 printf '\033[0;34m%s\033[0m\n' "Upgrading Oh My Zsh"
 cd $ZSH
 
-if git fetch upstream
-#if git pull origin master
+#if git fetch upstream
+if git pull origin master
 then
-  git merge upstream/master
+#  git merge upstream/master
   git pull origin master
   printf '\033[0;32m%s\033[0m\n' '         __                                     __   '
   printf '\033[0;32m%s\033[0m\n' '  ____  / /_     ____ ___  __  __   ____  _____/ /_  '
