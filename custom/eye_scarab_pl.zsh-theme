@@ -38,7 +38,8 @@ EXIT_ST=%(?.${FG_GREEN}✔.${FG_RED}✘)
 VI_MODE=$'$(vi_mode_prompt_info)'
 MODE_INDICATOR="${FG_RED}"
 ## PROMPT
-PROMPT="${FG_DARK}${BG_DGREY}"$'\ue0b0'"${BG_DGREY} %n ${FG_DGREY}${BG_LDARK}"$'\ue0b0'"${FG_DARK} %m ${FG_LDARK}${BG_DBLUE}"$'\ue0b0'"%F{015} $CP ${FG_DBLUE}%k"$'\ue0b0'" 
+#PROMPT="${FG_DARK}${BG_DGREY}"$'\ue0b0'"${BG_DGREY} %n ${FG_DGREY}${BG_LDARK}"$'\ue0b0'"${FG_DARK} %m ${FG_LDARK}${BG_DBLUE}"$'\ue0b0'"%F{015} $CP ${FG_DBLUE}%k"$'\ue0b0'" 
+PROMPT="${FG_DARK}${BG_DGREY}"$'\ue0b0'"${BG_DGREY} %n ${FG_DGREY}${BG_DBLUE}"$'\ue0b0'"%F{015} $CP ${FG_DBLUE}%k"$'\ue0b0'" 
 $FG_DGREY$VI_MODE"$'\ue0b1'"%f%k "
 RPROMPT="${FG_LDARK}"$'\ue0b2'"$GIT_INFO${FG_GREY}${BG_LDARK} $EXIT_ST ${FG_DARK}${BG_LDARK}"$'\ue0b2'"%f%k" 
 
