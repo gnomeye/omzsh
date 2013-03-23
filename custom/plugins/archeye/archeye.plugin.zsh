@@ -15,6 +15,7 @@ alias pacloc='pacman-color -Qi'              # Display information about a given
 alias paclocs='pacman-color -Qs'             # Search for package(s) in the local database
 alias pacups='pacman-color -Qu'		     # show updates
 alias paclocl='pacman-color -Qm'	     # show locally installed packages
+alias paclocpretty="pacman -Qi | sed '/^Depends On/,/^Required By/{ s/^Required By.*$//; H; d }; /^Name/!d; /^Name/{ n;x;}'| sed '/^$/s//==================================================================================/'"
 alias pacremtod='echo -e "Packages removed today:\n" && grep $(date +%F) /var/log/pacman.log | grep removed | cl 4-'
 alias pacinsttod='echo -e "Packages installed today:\n" && grep $(date +%F) /var/log/pacman.log | grep installed | cl 4-'
 alias pacupdtod='echo -e "Packages updated today:\n" && grep $(date +%F) /var/log/pacman.log | grep upgraded | cl 4-'
