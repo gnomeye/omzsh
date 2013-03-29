@@ -4,6 +4,8 @@ FG_LBLUE=%F{004}
 BG_LBLUE=%K{004}
 FG_DBLUE=%F{012}
 BG_DBLUE=%K{012}
+FG_ORA=%F{011}
+BG_ORA=%K{011}
 FG_GREY=%F{007}
 BG_GREY=%K{007}
 BG_DARK=%K{000}
@@ -39,7 +41,7 @@ VI_MODE=$'$(vi_mode_prompt_info)'
 MODE_INDICATOR="${FG_RED}"
 ## PROMPT
 #PROMPT="${FG_DARK}${BG_DGREY}"$'\ue0b0'"${BG_DGREY} %n ${FG_DGREY}${BG_LDARK}"$'\ue0b0'"${FG_DARK} %m ${FG_LDARK}${BG_DBLUE}"$'\ue0b0'"%F{015} $CP ${FG_DBLUE}%k"$'\ue0b0'" 
-PROMPT="${FG_DARK}${BG_DGREY}"$'\ue0b0'"${BG_DGREY} %n ${FG_DGREY}${BG_LBLUE}"$'\ue0b0'"${FG_DARK} $CP ${FG_LBLUE}%k"$'\ue0b0'" 
+PROMPT="${FG_DARK}${BG_DGREY}"$'\ue0b0'"${BG_DGREY} %n ${FG_DGREY}${BG_ORA}"$'\ue0b0'"${FG_DARK} $CP ${FG_ORA}%k"$'\ue0b0'" 
 $FG_DGREY$VI_MODE"$'\ue0b1'"%f%k "
 RPROMPT="${FG_LDARK}"$'\ue0b2'"$GIT_INFO${FG_DARK}${BG_LDARK} $EXIT_ST ${FG_DARK}${BG_LDARK}"$'\ue0b2'"%f%k" 
 
