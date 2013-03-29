@@ -30,7 +30,7 @@ source ~/.aliases
 #functs file
 #autoload .functs
 source ~/.functs
-source ~/.mailfuncts
+source ~/.mfuncts
 #fasd
 #eval "$(eval fasd --init auto)"
 #grep color
