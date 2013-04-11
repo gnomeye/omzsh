@@ -11,6 +11,7 @@ alias pacrem='sudo pacman -Rns'        # Remove the specified package(s), its co
 alias pacrep='pacman -Si'              # Display information about a given package in the repositories
 alias pacreps='pacman -Ss'             # Search for package(s) in the repositories
 alias pacse='pacreps'
+alias pacinf='pacrep'
 alias pacloc='pacman -Qi'              # Display information about a given package in the local database
 alias paclocs='pacman -Qs'             # Search for package(s) in the local database
 alias pacups='pacman -Qu'		     # show updates
