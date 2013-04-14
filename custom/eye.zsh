@@ -35,3 +35,9 @@ source ~/.mfuncts
 #eval "$(eval fasd --init auto)"
 #grep color
 export GREP_COLOR='1;31'
+# Customize to your needs...
+# ZSH_HIGHLIGHTER
+#ZSH_HIGHLIGHT_STYLES[alias]='fg=yellow'
+#ZSH_HIGHLIGHT_STYLES[function]='fg=yellow'
+ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
+#. /usr/lib/python3.3/site-packages/powerline/bindings/zsh/powerline.zsh
