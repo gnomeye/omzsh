@@ -1,6 +1,7 @@
 #!/bin/sh
 #only pts
-[[ $(echo $TTY|cut -c 6-8) == "tty" ]] && exit 0
+if [[ $(echo $TTY|cut -c 6-8) != "tty" ]]
+then
 # envfile
 envfile="${HOME}/.gnupg/gpg-agent.env"
 # test if already running
@@ -10,4 +11,5 @@ if test -f "$envfile" && kill -0 $(grep GPG_AGENT_INFO "$envfile" | cut -d: -f 2
 else
     #else start it
 	eval "$(gpg-agent -s --enable-ssh-support --daemon --write-env-file "$envfile")"
+fi
 fi
