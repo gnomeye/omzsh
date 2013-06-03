@@ -1,10 +1,12 @@
-current_path=`pwd`
-current_path=${current_path/ /\\ }
 printf '\033[0;34m%s\033[0m\n' "Upgrading Oh My Zsh"
 cd "$ZSH"
+<<<<<<< HEAD
 
 if git fetch upstream
 #if git pull origin master
+=======
+if git pull origin master
+>>>>>>> upstream/master
 then
   git merge upstream/master
 #  git pull origin master
@@ -20,4 +22,3 @@ else
   printf '\033[0;31m%s\033[0m\n' 'There was an error updating. Try again later?'
 fi
 
-cd "$current_path"
