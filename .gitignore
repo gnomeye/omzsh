@@ -1,9 +1,14 @@
 locals.zsh
 log/.zsh_history
 projects.zsh
+<<<<<<< HEAD
 tools/upgrade.sh
 !custom/example
 !custom/example.zsh
+=======
+custom/example
+custom/example.zsh
+>>>>>>> upstream/master
 *.swp
 !custom/example.zshcache
 cache/
