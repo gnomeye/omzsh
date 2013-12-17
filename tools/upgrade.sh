@@ -1,9 +1,13 @@
 printf '\033[0;34m%s\033[0m\n' "Upgrading Oh My Zsh"
 cd "$ZSH"
+<<<<<<< HEAD
 if git fetch upstream
 #if git pull origin master
 
 #if git pull --rebase origin master
+=======
+if git pull --rebase --stat origin master
+>>>>>>> upstream/master
 then
   git merge upstream/master
 #  git pull origin master
