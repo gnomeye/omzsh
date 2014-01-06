@@ -1,19 +1,30 @@
-mybl="%{[1;30m%}"
-mybl2="%{[0;34m%}"
-#PROMPT=$'%{$reset_color%}┌─┤%B%{$fg[blue]%}%n%b%{$fg[blue]%}_%M%{$reset_color%}│ %~\n└─╼ '
-PROMPT=$'%{$reset_color%}┌─┤%{$mybl%}%n%{$mybl2%}_%M%{$reset_color%}│ %~\n└─╼ '
-RPROMPT='$(vi_mode_prompt_info)$(git_prompt_info)$(qload)'
-# │ %{$fg[blue]%}%T%{$reset_color%}'
+## COLOR
+
+FG_BLUE=%F{004}
+FG_GREY=%F{007}
+FG_DARK=%F{240}
+FG_GREY=%F{244}
+FG_GREEN=%F{002}
+FG_RED=%F{001}
+FG_YELLOW=%F{003}
+
+## FUNCTION
+
+local return_code="%(?..${FG_RED}%?%{$reset_color%})"
+## PROMPT
+
+PROMPT=$'%{$reset_color%}${FG_BLUE}%M ${FG_GREY}%~ '
+RPROMPT='$(vi_mode_prompt_info)${return_code}$(git_prompt_info)'
 
 ## GIT
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[blue]%}(%{$fg[red]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} │ "
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[red]%}✗%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+ZSH_THEME_GIT_PROMPT_PREFIX=" ${FG_DARK}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY=" ${FG_RED}✗"
+ZSH_THEME_GIT_PROMPT_CLEAN=" ${FG_GREEN}✔"
 
 ## VI
 
-MODE_INDICATOR="%{$fg[blue]%}<%{$fg[red]%}v%{$reset_color%} "
+MODE_INDICATOR="${FG_YELLOW}<%{$reset_color%} "
 
 
