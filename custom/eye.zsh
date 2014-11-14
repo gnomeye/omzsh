@@ -1,6 +1,6 @@
 export HISTFILE=~/.hist
-export HISTSIZE=5000
-export SAVEHIST=20000
+export HISTSIZE=50000
+export SAVEHIST=$HISTSIZE
 export CORRECT_IGNORE='_*'
 #source zshenv
 source ~/.zshenv
