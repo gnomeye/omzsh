@@ -21,7 +21,9 @@ if [ -f "${GPG_ENV}" ]; then
     export SSH_AGENT_PID
 fi
 # check if another agent is running
-if ! gpg-connect-agent --quiet /bye > /dev/null 2> /dev/null; then
+#if ! gpg-connect-agent --quiet /bye > /dev/null 2> /dev/null; then
+# fix by eyenx
+if ! pgrep gpg-agent > /dev/null 2> /dev/null; then
     # source settings of old agent, if applicable
     if [ -f "${GPG_ENV}" ]; then
         . ${GPG_ENV} > /dev/null
@@ -31,7 +33,9 @@ if ! gpg-connect-agent --quiet /bye > /dev/null 2> /dev/null; then
     fi
 
     # check again if another agent is running using the newly sourced settings
-    if ! gpg-connect-agent --quiet /bye > /dev/null 2> /dev/null; then
+    #if ! gpg-connect-agent --quiet /bye > /dev/null 2> /dev/null; then
+    # fix by eyenx
+    if ! pgrep gpg-agent > /dev/null 2> /dev/null; then
         # check for existing ssh-agent
         if ssh-add -l > /dev/null 2> /dev/null; then
             # ssh-agent running, start gpg-agent without ssh support
