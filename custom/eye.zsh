@@ -41,3 +41,4 @@ export GREP_COLOR='1;31'
 #ZSH_HIGHLIGHT_STYLES[function]='fg=yellow'
 ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 #. /usr/lib/python3.3/site-packages/powerline/bindings/zsh/powerline.zsh
+export ZSH_CACHE_DIR=/home/eye/.cache/omzsh
