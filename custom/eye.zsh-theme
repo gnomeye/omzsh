@@ -9,6 +9,7 @@ FG_GREY=%F{007}
 FG_GREEN=%F{002}
 FG_RED=%F{001}
 FG_YELLOW=%F{003}
+FG_CYAN=%F{006}
 
 ## VARS
 
@@ -20,7 +21,7 @@ PREFIX="λ"
 local return_code="%(?..${FG_RED}%?%f%k)"
 ## PROMPT
 
-PROMPT=$'%{$reset_color%}${FG_BLUE}${PREFIX} ${FG_GREY}%~ %f%k'
+PROMPT=$'%{$reset_color%}${FG_DARK}${PREFIX} ${FG_GREY}%~ %f%k'
 RPROMPT='$(vi_mode_prompt_info)${return_code}$(git_prompt_info)'
 
 ## GIT
