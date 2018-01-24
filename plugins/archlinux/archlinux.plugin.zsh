@@ -64,36 +64,36 @@ elif (( $+commands[yaourt] )); then
   }
 else
   upgrade() {
-    sudo pacman -Syu
+    pacman -Syu
   }
 fi
 
 # Pacman - https://wiki.archlinux.org/index.php/Pacman_Tips
-alias pacupg='sudo pacman -Syu'
-alias pacin='sudo pacman -S'
-alias pacins='sudo pacman -U'
-alias pacre='sudo pacman -R'
-alias pacrem='sudo pacman -Rns'
+alias pacupg='pacman -Syu'
+alias pacin='pacman -S'
+alias pacins='pacman -U'
+alias pacre='pacman -R'
+alias pacrem='pacman -Rns'
 alias pacrep='pacman -Si'
 alias pacreps='pacman -Ss'
 alias pacloc='pacman -Qi'
 alias paclocs='pacman -Qs'
-alias pacinsd='sudo pacman -S --asdeps'
-alias pacmir='sudo pacman -Syy'
-alias paclsorphans='sudo pacman -Qdt'
-alias pacrmorphans='sudo pacman -Rs $(pacman -Qtdq)'
-alias pacfileupg='sudo pacman -Fy'
+alias pacinsd='pacman -S --asdeps'
+alias pacmir='pacman -Syy'
+alias paclsorphans='pacman -Qdt'
+alias pacrmorphans='pacman -Rs $(pacman -Qtdq)'
+alias pacfileupg='pacman -Fy'
 alias pacfiles='pacman tFs'
 
 
 if (( $+commands[abs] && $+commands[aur] )); then
-  alias pacupd='sudo pacman -Sy && sudo abs && sudo aur'
+  alias pacupd='pacman -Sy && sudo abs && sudo aur'
 elif (( $+commands[abs] )); then
-  alias pacupd='sudo pacman -Sy && sudo abs'
+  alias pacupd='pacman -Sy && sudo abs'
 elif (( $+commands[aur] )); then
-  alias pacupd='sudo pacman -Sy && sudo aur'
+  alias pacupd='pacman -Sy && sudo aur'
 else
-  alias pacupd='sudo pacman -Sy'
+  alias pacupd='pacman -Sy'
 fi
 
 paclist() {
