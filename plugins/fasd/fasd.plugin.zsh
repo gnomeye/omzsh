@@ -5,7 +5,7 @@ if [ $commands[fasd] ]; then # check if fasd is installed
   fi
   source "$fasd_cache"
   unset fasd_cache
-  alias v="f -e $EDITOR"
+  alias v="f -e \"$EDITOR\""
   #alias o='a -e open_command'
   alias o='a -e mimeo'
 fi
