@@ -27,7 +27,8 @@ compdef _pacman pacman-color=pacman
 compdef _pacman packer=pacman
 #alias file
 source ~/.aliases
-source ~/.adfsys.aliases
+source ~/.work.aliases
+source ~/.work.env
 #functs file
 #autoload .functs
 source ~/.functs
