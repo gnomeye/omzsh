@@ -21,7 +21,7 @@ PREFIX="λ"
 local return_code="%(?..${FG_RED}%?%f%k)"
 ## PROMPT
 
-PROMPT=$'%{$reset_color%}${FG_DARK}${PREFIX} ${FG_GREY}%~ %f%k'
+PROMPT=$'%{$reset_color%}${FG_DARK}${PREFIX} ${FG_GREY}%(4~|…/%2~|%3~) %f%k'
 RPROMPT='$(vi_mode_prompt_info)${return_code}$(git_prompt_info)'
 
 ## GIT
