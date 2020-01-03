@@ -27,6 +27,7 @@ plugins=(... yarn)
 | yh    | `yarn help`                               | Show help for a yarn command                                |
 | yi    | `yarn init`                               | Interactively creates or updates a package.json file        |
 | yin   | `yarn install`                            | Install dependencies defined in `package.json`              |
+| yln   | `yarn lint`                               | Run the lint script defined in `package.json`               |
 | yls   | `yarn list`                               | List installed packages                                     |
 | yout  | `yarn outdated`                           | Check for outdated package dependencies                     |
 | yp    | `yarn pack`                               | Create a compressed gzip archive of package dependencies    |
@@ -39,5 +40,6 @@ plugins=(... yarn)
 | yuc   | `yarn global upgrade && yarn cache clean` | Upgrade global packages and clean yarn's global cache       |
 | yui   | `yarn upgrade-interactive`                | Prompt for which outdated packages to upgrade               |
 | yup   | `yarn upgrade`                            | Upgrade packages to their latest version                    |
+| yv    | `yarn version`                            | Update the version of your package                          |
 | yw    | `yarn workspace`                          | Run a command within a single workspace.                    |
 | yws   | `yarn workspaces`                         | Run a command within all defined workspaces.                |

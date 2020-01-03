@@ -1,14 +1,12 @@
 ## COLOR
 
-FG_BLUE=%F{014}
-#FG_GREY=%F{007}
-#FG_DARK=%F{240}
 FG_DARK=%F{008}
-#FG_GREY=%F{245}
 FG_GREY=%F{007}
-FG_GREEN=%F{002}
 FG_RED=%F{001}
+FG_GREEN=%F{002}
 FG_YELLOW=%F{003}
+FG_BLUE=%F{004}
+FG_MAGE=%F{005}
 FG_CYAN=%F{006}
 
 ## VARS
@@ -21,12 +19,12 @@ PREFIX="λ"
 local return_code="%(?..${FG_RED}%?%f%k)"
 ## PROMPT
 
-PROMPT=$'%{$reset_color%}${FG_DARK}${PREFIX} ${FG_GREY}%(4~|…/%2~|%3~) %f%k'
-RPROMPT='$(vi_mode_prompt_info)${return_code}$(git_prompt_info)'
+PROMPT=$'%{$reset_color%}${FG_YELLOW}%(4~|…/%2~|%3~) ${FG_GREY}%f%k'
+RPROMPT='$(vi_mode_prompt_info)$(git_prompt_info)'
 
 ## GIT
 
-ZSH_THEME_GIT_PROMPT_PREFIX=" ${FG_DARK}"
+ZSH_THEME_GIT_PROMPT_PREFIX=" ${FG_YELLOW}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%f%k"
 ZSH_THEME_GIT_PROMPT_DIRTY=" ${FG_RED}✗"
 ZSH_THEME_GIT_PROMPT_CLEAN=" ${FG_GREEN}✔"
