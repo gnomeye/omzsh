@@ -21,10 +21,7 @@ else
 fi
 
 cd "$ZSH"
-#if git fetch upstream
-#if git pull origin master
-#if git pull --rebase origin master
-#=======
+
 
 # Set git-config values known to fix git errors
 # Line endings (#4069)
@@ -44,8 +41,6 @@ fi
 printf "${BLUE}%s${NORMAL}\n" "Updating Oh My Zsh"
 if git pull --rebase --stat origin master
 then
-#  git merge upstream/master
-#  git pull origin master
   printf '%s' "$GREEN"
   printf '%s\n' '         __                                     __   '
   printf '%s\n' '  ____  / /_     ____ ___  __  __   ____  _____/ /_  '
