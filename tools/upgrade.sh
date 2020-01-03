@@ -39,8 +39,9 @@ if [ -n "$remote" ]; then
 fi
 
 printf "${BLUE}%s${NORMAL}\n" "Updating Oh My Zsh"
-if git pull --rebase --stat origin master
+if git fetch upstream
 then
+  git merge upstream/master
   printf '%s' "$GREEN"
   printf '%s\n' '         __                                     __   '
   printf '%s\n' '  ____  / /_     ____ ___  __  __   ____  _____/ /_  '
