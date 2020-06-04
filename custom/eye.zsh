@@ -32,7 +32,7 @@ source ~/.work.env
 #functs file
 #autoload .functs
 source ~/.functs
-source ~/.mfuncts
+#source ~/.mfuncts
 #fasd
 #eval "$(eval fasd --init auto)"
 #grep color
