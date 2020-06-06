@@ -144,12 +144,12 @@ alias pacrep='pacman -Si'
 alias pacreps='pacman -Ss'
 alias pacloc='pacman -Qi'
 alias paclocs='pacman -Qs'
-alias pacinsd='pacman -S --asdeps'
-alias pacmir='pacman -Syy'
-alias paclsorphans='pacman -Qdt'
-alias pacrmorphans='pacman -Rs $(pacman -Qtdq)'
-alias pacfileupg='pacman -Fy'
-alias pacfiles='pacman tFs'
+alias pacinsd='sudo pacman -S --asdeps'
+alias pacmir='sudo pacman -Syy'
+alias paclsorphans='sudo pacman -Qdt'
+alias pacrmorphans='sudo pacman -Rs $(pacman -Qtdq)'
+alias pacfileupg='sudo pacman -Fy'
+alias pacfiles='pacman -F'
 alias pacls='pacman -Ql'
 alias pacown='pacman -Qo'
 
@@ -208,7 +208,7 @@ function pacmansignkeys() {
 if (( $+commands[xdg-open] )); then
   function pacweb() {
     pkg="$1"
-    infos="$(pacman -Si "$pkg")"
+    infos="$(LANG=C pacman -Si "$pkg")"
     if [[ -z "$infos" ]]; then
       return
     fi
