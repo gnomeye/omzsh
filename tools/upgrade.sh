@@ -14,6 +14,7 @@ if [ -t 1 ]; then
   YELLOW=$(printf '\033[33m')
   BLUE=$(printf '\033[34m')
   BOLD=$(printf '\033[1m')
+  UNDER=$(printf '\033[4m')
   RESET=$(printf '\033[m')
 else
   RB_RED=""
@@ -28,6 +29,7 @@ else
   GREEN=""
   YELLOW=""
   BLUE=""
+  UNDER=""
   BOLD=""
   RESET=""
 fi
@@ -64,9 +66,11 @@ then
   printf '%s\n' '/ /_/ / / / /  / / / / / / /_/ /    / /_(__  ) / / / '
   printf '%s\n' '\____/_/ /_/  /_/ /_/ /_/\__, /    /___/____/_/ /_/  '
   printf "${BLUE}%s\n" "Hooray! Oh My Zsh has been updated and/or is at the current version."
-  printf "${BLUE}${BOLD}%s${RESET}\n" "To keep up on the latest news and updates, follow us on twitter: https://twitter.com/ohmyzsh"
-  printf "${BLUE}${BOLD}%s${RESET}\n" "Get your Oh My Zsh swag at: https://shop.planetargon.com/collections/oh-my-zsh"
+  printf "${BLUE}${BOLD}%s ${UNDER}%s${RESET}\n" "To keep up on the latest news and updates, follow us on Twitter:" "https://twitter.com/ohmyzsh"
+  printf "${BLUE}${BOLD}%s ${UNDER}%s${RESET}\n" "Want to get involved in the community? Join our Discord:" "https://discord.gg/ohmyzsh"
+  printf "${BLUE}${BOLD}%s ${UNDER}%s${RESET}\n" "Get your Oh My Zsh swag at:" "https://shop.planetargon.com/collections/oh-my-zsh"
 else
+  status=$?
   printf "${RED}%s${RESET}\n" 'There was an error updating. Try again later?'
 fi
 
@@ -75,3 +79,6 @@ case "$resetAutoStash" in
   "") git config --unset rebase.autoStash ;;
   *) git config rebase.autoStash "$resetAutoStash" ;;
 esac
+
+# Exit with `1` if the update failed
+exit $status
