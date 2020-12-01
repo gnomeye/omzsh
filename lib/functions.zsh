@@ -14,12 +14,18 @@ function upgrade_oh_my_zsh() {
   fi
 
   # Run update script
-  env ZSH="$ZSH" sh "$ZSH/tools/upgrade.sh"
+  env ZSH="$ZSH" zsh -f "$ZSH/tools/upgrade.sh"
+  local ret=$?
   # Update last updated file
   zmodload zsh/datetime
   echo "LAST_EPOCH=$(( EPOCHSECONDS / 60 / 60 / 24 ))" >! "${ZSH_CACHE_DIR}/.zsh-update"
   # Remove update lock if it exists
   command rm -rf "$ZSH/log/update.lock"
+  # Restart the zsh session
+  if [[ $ret -eq 0 ]]; then
+    # Check whether to run a login shell
+    [[ "$ZSH_ARGZERO" = -* ]] && exec -l "${ZSH_ARGZERO#-}" || exec "$ZSH_ARGZERO"
+  fi
 }
 
 function take() {
@@ -134,6 +140,7 @@ zmodload zsh/langinfo
 #    -P causes spaces to be encoded as '%20' instead of '+'
 function omz_urlencode() {
   emulate -L zsh
+  local -a opts
   zparseopts -D -E -a opts r m P
 
   local in_str=$1
