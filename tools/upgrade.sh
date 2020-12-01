@@ -72,7 +72,6 @@ then
     else
       "$ZSH/tools/changelog.sh" HEAD "$last_commit"
     fi
-  fi
 
   printf '%s         %s__      %s           %s        %s       %s     %s__   %s\n' $RAINBOW $RESET
   printf '%s  ____  %s/ /_    %s ____ ___  %s__  __  %s ____  %s_____%s/ /_  %s\n' $RAINBOW $RESET
