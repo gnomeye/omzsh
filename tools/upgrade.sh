@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 if [ -z "$ZSH_VERSION" ]; then
-  exec zsh "$0"
+  exec zsh "$0" "$@"
 fi
 
 cd "$ZSH"
@@ -10,7 +10,7 @@ cd "$ZSH"
 # and that terminal supports them.
 
 local -a RAINBOW
-local RED GREEN YELLOW BLUE UNDER BOLD RESET
+local RED GREEN YELLOW BLUE BOLD DIM UNDER RESET
 
 if [ -t 1 ]; then
   RAINBOW=(
@@ -28,12 +28,13 @@ if [ -t 1 ]; then
   YELLOW=$(printf '\033[33m')
   BLUE=$(printf '\033[34m')
   BOLD=$(printf '\033[1m')
+  DIM=$(printf '\033[2m')
   UNDER=$(printf '\033[4m')
   RESET=$(printf '\033[m')
 fi
 
 # Update upstream remote to ohmyzsh org
-git remote -v | while read remote url _; do
+git remote -v | while read remote url extra; do
   case "$url" in
   https://github.com/robbyrussell/oh-my-zsh(|.git))
     git remote set-url "$remote" "https://github.com/ohmyzsh/ohmyzsh.git"
@@ -66,13 +67,6 @@ if git fetch upstream
 then
   git merge upstream/master
   message="Hooray! Oh My Zsh has been updated!"
-    # Display changelog with less if available, otherwise just print it to the terminal
-    if (( $+commands[less] )); then
-      command less -R <("$ZSH/tools/changelog.sh" HEAD "$last_commit")
-    else
-      "$ZSH/tools/changelog.sh" HEAD "$last_commit"
-    fi
-
   printf '%s         %s__      %s           %s        %s       %s     %s__   %s\n' $RAINBOW $RESET
   printf '%s  ____  %s/ /_    %s ____ ___  %s__  __  %s ____  %s_____%s/ /_  %s\n' $RAINBOW $RESET
   printf '%s / __ \%s/ __ \  %s / __ `__ \%s/ / / / %s /_  / %s/ ___/%s __ \ %s\n' $RAINBOW $RESET
